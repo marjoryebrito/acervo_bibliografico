@@ -23,3 +23,7 @@ Route::get('/sobre-nos', [App\Http\Controllers\SobreNosController::class, 'sobre
 Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('cliente.contato');
 Route::get('/acervo', [App\Http\Controllers\AcervoController::class, 'acervo'])->name('cliente.acervo');
 
+Route::prefix('/admin')->group(function(){
+    Route::get('/', [App\Http\Controllers\IndexAdminController::class, 'index'])->name('admin.index');
+});
+
