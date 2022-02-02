@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LivroController;
+use App\Http\Controllers\LeitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-/*Na versão 8.x do Laravel utilizar:
-Route::get('/', [\App\Http\Controller\PrincipalController::class, 'principal']);
-*/
-//use App\Http\Controllers\IndexController;
-Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('cliente.index');
-Route::get('/sobre-nos', [App\Http\Controllers\SobreNosController::class, 'sobrenos'])->name('cliente.sobrenos');
-Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('cliente.contato');
-Route::get('/acervo', [App\Http\Controllers\AcervoController::class, 'acervo'])->name('cliente.acervo');
 
 Route::prefix('/admin')->group(function(){
-    Route::get('/', [App\Http\Controllers\IndexAdminController::class, 'index'])->name('admin.index');
+       
+    Route::resource('livro', LivroController::class);
+    Route::resource('leitor', LeitorController::class);
+
 });
 

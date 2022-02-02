@@ -1,217 +1,211 @@
-
-.back-livro{
-    background-image: url("../img/background.jpg");
-    height: 680px;
-    width: 100%;
-    background-size: 100%  80%;
-    background-position: center; 
-    background-repeat: no-repeat; 
-
-}
-
-button{
-  background-color: #241212;
-  border: none;
-  color: white;
-  padding: 12px 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  width: 90%;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-.card-form{
-    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    background-color: white;
-    float: right;
-    margin-top: 75px;
-    margin-right: 40px;
-    width: 400px;
-    height:430px;
-    border-radius: 5px;
-    text-align: center;
-    color: rgb(39, 7, 7);
-}
-
-.card-form form{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.div_acervo{
-    padding: 80px;
-    text-align: center;
-}
-
-.div_acervo p{
-    font-size: 2em;
-    color: rgb(39, 7, 7);
-    padding: 10px;
-}
-
-.faixa{
-    background-image: url("../img/background.jpg"); 
-    display: table;
-    height: 400px;
-    width: 100%;
-    background-size: 100%  80%;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
-}
-        
-footer{
-    background-color: #D2B48C; 
-    width: 100%;
-    height:100px;
-    text-align: center;
-    display: table;
-}
-
-.info_contato{
-    font-size: 1.5em;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(39, 7, 7);
-    padding: 50px;
-}
-
-input{
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.link_cadastro{
-    padding: 80px;
-}
-       
-.menu {
-    float: right;
-    margin-right: 0px;
-    width: 100%;
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:rgb(39, 7, 7);
-}
-
-.menu li {
-    display: inline;
-    float: right;
-    padding: 8px;
-    border-right:1px solid rgb(39, 7, 7);
-}
-
-.menu li a {
-  display: block;
-  color: #fff;
-  text-align: center;
-  padding: 12px 14px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.menu_vertical{
-    float: left;
-    margin-left: 0px;
-    width: 200px;
+body{
+    background-color: #FFF5EE;
+    }
     
-}
+    button{
+      background-color: #241212;
+      border: none;
+      color: white;
+      padding: 12px 100px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    
+    .card-form{
+        box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        background-color: white;
+        float: right;
+        margin-top: 75px;
+        margin-right: 40px;
+        width: 400px;
+        height:430px;
+        border-radius: 5px;
+        text-align: center;
+        color: rgb(39, 7, 7);
+    }
+    
+    .card-form form{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .div_acervo{
+        padding: 80px;
+        text-align: center;
+    }
+    
+    .div_acervo p{
+        font-size: 2em;
+        color: rgb(39, 7, 7);
+        padding: 10px;
+    }
 
-.menu_vertical ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  height: 600px;
-  background-color: rgb(39, 7, 7);
-}
-
-.menu_vertical li a{
-display: block;
-color: #fff;
-padding: 8px 16px;
-text-decoration: none;
+    .div-erros{
+        color: red;
+        margin: 10px;
+    }
+    
+    .div_form{
+     padding: 250px;
+    width:600px;
+    text-align:left;
+    }
+    
+    .faixa{
+        background-image: url("../img/background.jpg"); 
+        display: table;
+        margin-left:0px;
+         float:right;
+        margin-top:0px;
+        height: 400px;
+        width: 100%;
+        background-size: 100%  70%;
+        background-repeat: no-repeat; 
       
-}
-
-
-.sobre-nos{
-    width: 70%;
-    font-size: 1.5em;
-    text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(39, 7, 7);
-   }
-
-.tabela_acervo{
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.tabela_acervo th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: rgb(39, 7, 7);
-    color: white;
-}
-
-.texto_footer{
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle; 
-}   
-
-.titulo_index{
-    float: left;
-    margin-top: 75px;
-    margin-left: 20px;
     
-    text-align: left;
-}
-
-.titulo_principal{
-font-family: Arial, Helvetica, sans-serif;
-color: white;
-font-size: 7em;
-display: table-cell;
-text-align: center;
-vertical-align: middle;
-}
         
+    }
+            
+    footer{
+        background-color: #D2B48C; 
+        width: 100%;
+        height:100px;
+        text-align: center;
+        display: table;
+    }
+    
+    
+    input{
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    .link_cadastro{
+        padding: 80px;
+    }
+           
+    .menu {
+        float: right;
+        margin-right: 0px;
+        width: 100%;
+    }
+    
+    .menu ul {
+        box-shadow:5px 10px 18px #888888;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:#fff;
+    }
+    
+    .menu li {
+        display: inline;
+        float: right;
+        padding: 2px;
+        border-leftt:1px solid rgb(39, 7, 7);
+    }
+    
+    .menu li a {
+      display: block;
+      color: rgb(39, 7, 7);
+      text-align: center;
+      padding: 12px 14px;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .menu_vertical{
+        float: left;
+        margin-left: 0px;
+        width:15%;
         
- .titulo_principal_index{
+    }
+    
+    .menu_vertical ul{
+      list-style-type: none;
+      margin: 5%;
+      padding: 0;
+      width: 185px;
+      height: 800px;
+     background-color: rgb(39, 7, 7);
+     box-shadow:5px 10px 18px #888888;
+     
+    }
+    
+    .menu_vertical li a{
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 6em;
-    display: table-cell;
-    text-align: left;
+          
+    }
     
-  }       
-        
-  .workspace{
-    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    background-color: white;
-    float: right;
-    margin-right: 0px;
-    width: 85%;
-    height:900px;
-    color: rgb(39, 7, 7);
-  }
+    
+    .sobre-nos{
+        width: 70%;
+        font-size: 1.5em;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgb(39, 7, 7);
+       }
+    
+    .tabela_acervo{
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .tabela_acervo th, td {
+       padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    
+    }
+    
+    
+    tr:hover td {background-color: #BDBDBD;}
+    
+    .texto_footer{
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle; 
+    }   
+    
+    
+    
+    .titulo_principal{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 5em;
+    display: table-cell;
+    margin-right:20px;
+    text-align:right; 
+    vertical-align: middle; 
+    }
+         
+            
+      .workspace{
+        margin-top: 0.75%;
+        background-color: #FFF5EE;
+        float: right;
+        margin-right: 0px;
+        width: 85%;
+        height:900px;
+        color: rgb(39, 7, 7);
+    text-align:center;
+      }
