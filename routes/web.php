@@ -18,9 +18,13 @@ use App\Http\Controllers\LeitorController;
 
 
 Route::prefix('/admin')->group(function(){
+
        
     Route::resource('livro', LivroController::class);
     Route::resource('leitor', LeitorController::class);
+
+    Route::post('/buscaLivro', [App\Http\Controllers\LivroController::class, 'buscaLivro'])->name('livro.buscaLivro');
+    Route::get('/buscaLivro', [App\Http\Controllers\LivroController::class, 'buscaLivro'])->name('livro.buscaLivro');
 
 });
 

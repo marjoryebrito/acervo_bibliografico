@@ -38,6 +38,7 @@
              </div> 
 
              @yield('form-pesquisa')
+             @yield('feedback')
              @yield('conteudo')
 
 

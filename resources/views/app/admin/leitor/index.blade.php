@@ -3,7 +3,7 @@
 @section('apresentacao')
 
 	
-<h1 class="titulo_principal">Bem-vindo &nbsp;</h1>
+<h1 class="titulo_principal">Leitores &nbsp;</h1>
      
 @endsection
 

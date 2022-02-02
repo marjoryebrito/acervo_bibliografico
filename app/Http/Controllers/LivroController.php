@@ -12,12 +12,12 @@ class LivroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         $livros = Livro::paginate(5);
-
-        return view('app.admin.livro.index', ['livros'=> $livros]);
+       
+       return view('app.admin.livro.index', ['livros'=> $livros]);
     }
 
     /**
@@ -64,9 +64,22 @@ class LivroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        
+
+    }
+
+    public function buscaLivro(Request $request)
+    {
+
+        //@dd($request);
+
+       $livros = Livro::where('titulo', 'like', '%'.$request->input('busca_titulo').'%')
+        ->where('status', 'like', '%'.$request->input('busca_status').'%')->paginate();
+
+        return view('app.admin.livro.buscaLivro', ['livros'=> $livros , 'request'=>$request->all()]);
+
     }
 
     /**
@@ -75,9 +88,10 @@ class LivroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Livro $livro)
     {
-        //
+        return view('app.admin.livro.edit', ['livro'=> $livro]);
+
     }
 
     /**
@@ -87,9 +101,19 @@ class LivroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Livro $livro)
     {
-        //
+
+        $msg = '';
+        $update = $livro->update($request->all());
+
+        if($update){
+            $msg = 'Atualização realizada com sucesso.';
+        }else{
+            $msg = 'Problemas ao atualizar cadastro.';
+        }
+
+        return redirect()->route('livro.edit', ['livro'=>$livro->id, 'msg'=>$msg]);
     }
 
     /**
@@ -98,8 +122,9 @@ class LivroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Livro $livro)
     {
-        //
+        $livro->delete();
+        return redirect()->route('livro.index');
     }
 }

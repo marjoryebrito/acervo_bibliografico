@@ -2,8 +2,8 @@ body{
     background-color: #FFF5EE;
     }
     
-    button{
-      background-color: #241212;
+    .button_app{
+      background-color: rgb(39, 7, 7);
       border: none;
       color: white;
       padding: 12px 100px;
@@ -14,6 +14,18 @@ body{
       width: 80%;
       margin-top: 20px;
       cursor: pointer;
+    }
+
+    .button_exluir{
+        background-color: #241212;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
     }
     
     .card-form{
@@ -50,11 +62,18 @@ body{
         color: red;
         margin: 10px;
     }
-    
+     
     .div_form{
-     padding: 250px;
+     margin-left: 250px;
+     margin-top: -80px;
     width:600px;
     text-align:left;
+    }
+
+    .div-opcoes-edicao{
+        float: right;
+        margin-right: 70px;
+        margin-top: -80px;
     }
     
     .faixa{
@@ -114,7 +133,7 @@ body{
         display: inline;
         float: right;
         padding: 2px;
-        border-leftt:1px solid rgb(39, 7, 7);
+        border-left:1px solid rgb(39, 7, 7);
     }
     
     .menu li a {

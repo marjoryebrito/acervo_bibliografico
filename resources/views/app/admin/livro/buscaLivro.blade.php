@@ -3,7 +3,7 @@
 @section('apresentacao')
 
 	
-<h1 class="titulo_principal">Bem-vindo &nbsp;</h1>
+<h1 class="titulo_principal">Resultado da busca &nbsp;</h1>
      
 @endsection
 
@@ -13,9 +13,8 @@
         @csrf
     <label>Busca por título</label><br>
     <input type="text" name="busca_titulo"/>
-
     <label>Busca por status</label><br>
-    <select name="busca_status">
+    <select name="busca_status" id="">
         <option value="">--Selecione--</option>
         <option value="Disponível">Disponível</option>
         <option value="Indisponível">Indisponível</option>
@@ -50,7 +49,7 @@
         <td>{{$livro->edicao}}</td>
         <td>{{$livro->status}}</td>
         <td><a href=""><img src="https://img.icons8.com/ios/20/000000/open-book.png"/></a></td>
-        <td><a href="{{ route('livro.edit', ['livro'=>$livro->id])}}"><img src="https://img.icons8.com/ios/20/000000/pencil-tip.png"/></a></td>
+        <td><a href=""><img src="https://img.icons8.com/ios/20/000000/pencil-tip.png"/></a></td>
     </tr>
     @endforeach
 
