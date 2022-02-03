@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\LeitorController;
+use App\Http\Controllers\EmprestimoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::prefix('/admin')->group(function(){
        
     Route::resource('livro', LivroController::class);
     Route::resource('leitor', LeitorController::class);
+    Route::resource('emprestimo', EmprestimoController::class);
 
     Route::post('/buscaLivro', [App\Http\Controllers\LivroController::class, 'buscaLivro'])->name('livro.buscaLivro');
     Route::get('/buscaLivro', [App\Http\Controllers\LivroController::class, 'buscaLivro'])->name('livro.buscaLivro');

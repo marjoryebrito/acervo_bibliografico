@@ -11,7 +11,7 @@
         <div class="menu">
             <ul>
         <li style="float:left;"><a href="{{ route('livro.index')}}"><b>Acervo Bibliográfico</b></a></li>
-                <li><a href="">Sair</a></li>
+                <!--<li><a href="">Sair</a></li>-->
             </ul>
         </div>
         
