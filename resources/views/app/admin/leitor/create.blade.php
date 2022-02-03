@@ -9,18 +9,8 @@
 
 @section('conteudo')
 <div class="div_form">
-	<form>
-	<label>Nome</label><br>
-	<input type="text"/><br>
-
-	<label>CPF</label><br>
-	<input type="text"/><br>
-
-	<label>E-mail</label><br>
-	<input type="text"/><br>
-
-	<Button type="submit">Cadastrar</Button>
-	</form>
-
+	@component('app.admin.leitor._components.form_create_edit')
+		
+	@endcomponent
     </div>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Leitor;
 
 class LeitorController extends Controller
 {
@@ -13,7 +14,11 @@ class LeitorController extends Controller
      */
     public function index()
     {
-        return view('app.admin.leitor.index');
+
+        $leitores = Leitor::paginate(5);
+       
+        return view('app.admin.leitor.index', ['leitores'=> $leitores]);
+        
     }
 
     /**
@@ -34,7 +39,23 @@ class LeitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         //validação dos campos
+         $regras = [
+            'nome' => 'required',
+            'cpf' => 'required',
+            'email' => 'required|email',
+            
+        ];
+        $feedback = [
+            'required' => 'O campo :attribute deve ser preenchido.',
+            'email.email'=> 'Informe um e-mail válido'
+        ];
+
+        $request->validate($regras, $feedback);
+
+        Leitor::create($request->all());
+
+        return redirect()->route('leitor.index');
     }
 
     /**
@@ -54,9 +75,9 @@ class LeitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Leitor $leitor)
     {
-        //
+        return view('app.admin.leitor.edit', ['leitor'=> $leitor]);
     }
 
     /**
@@ -66,9 +87,12 @@ class LeitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Leitor $leitor)
     {
-        //
+        
+        $update = $leitor->update($request->all());
+
+        return redirect()->route('leitor.edit', ['leitor'=>$leitor->id]);
     }
 
     /**
@@ -77,8 +101,9 @@ class LeitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Leitor $leitor)
     {
-        //
+        $leitor->delete();
+        return redirect()->route('leitor.index');
     }
 }

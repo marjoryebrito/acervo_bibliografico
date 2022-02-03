@@ -38,7 +38,7 @@
         <th>Editora</th>
         <th>Edição</th>
         <th>Status</th>
-        <th>Emprestar</th>
+        <th>Emprestar/ <br> Devolver</th>
         <th>Editar</th>
     </tr>
 
@@ -55,4 +55,4 @@
     @endforeach
 
     </table>
-@endsection
+@endsection    

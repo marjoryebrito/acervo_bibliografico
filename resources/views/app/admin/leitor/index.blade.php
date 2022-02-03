@@ -15,12 +15,15 @@
         <th>E-mail</th>
         <th>Editar</th>
     </tr>
-    <tr>
-        <td>Luke Skywalker</td>
-        <td>123.456.789-00</td>
-        <td>luke@sw.com</td>
-        <td><a href=""><img src="https://img.icons8.com/ios/20/000000/pencil-tip.png"/></a></td>
+    
+        @foreach ($leitores as $leitor)
+    <tr>   
+        
+        <td>{{$leitor->nome}}</td>
+        <td>{{$leitor->cpf}}</td>
+        <td>{{$leitor->email}}</td>
+        <td><a href="{{ route('leitor.edit', ['leitor'=>$leitor->id])}}"><img src="https://img.icons8.com/ios/20/000000/pencil-tip.png"/></a></td>
     </tr>
-   
+        @endforeach
     </table>
 @endsection
