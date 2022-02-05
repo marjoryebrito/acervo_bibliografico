@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Emprestimo extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+
+    protected $fillable = ['livro_id', 'leitor_id'];
 }

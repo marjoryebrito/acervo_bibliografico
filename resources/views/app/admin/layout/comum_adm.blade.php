@@ -11,7 +11,6 @@
         <div class="menu">
             <ul>
         <li style="float:left;"><a href="{{ route('livro.index')}}"><b>Acervo Bibliográfico</b></a></li>
-                <!--<li><a href="">Sair</a></li>-->
             </ul>
         </div>
         
@@ -25,7 +24,7 @@
         <li><a href="{{ route('livro.create')}}">Cadastrar Livro</a></li>
         <li><a href="{{ route('leitor.create')}}">Cadastrar Leitor</a></li>
         <li><a href="{{ route('leitor.index')}}">Ver leitores</a></li>
-      
+        <li><a href="{{ route('emprestimo.index')}}">Ver Empréstimos</a></li>
                 
             </ul>
         </div>

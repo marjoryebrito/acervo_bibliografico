@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Livro;
+use \App\Models\Emprestimo;
+use Illuminate\Support\Facades\DB;
 
 class EmprestimoController extends Controller
 {
@@ -14,7 +16,15 @@ class EmprestimoController extends Controller
      */
     public function index()
     {
-        //
+
+
+        $emprestimos = DB::table('emprestimos')
+        ->join('livros', 'livros.id', '=', 'emprestimos.livro_id')
+        ->join('leitors', 'leitors.id', '=', 'emprestimos.leitor_id')
+        ->select('emprestimos.*', 'livros.titulo', 'leitors.nome')
+        ->get();
+
+        return view('app.admin.emprestimo.index', ['emprestimos'=> $emprestimos]);
     }
 
     /**
@@ -22,10 +32,9 @@ class EmprestimoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Livro $livro)
+    public function create()
     {
-        
-        return view('app.admin.emprestimo.create', ['livro'=> $livro]);
+       
 
     }
 
@@ -37,8 +46,16 @@ class EmprestimoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        Emprestimo::create($request->all());
+
+        Livro::where('id', $request->input('livro_id'))->update(['status'=>'Indisponível']);
+        
+
+        
+        return redirect()->route('livro.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -46,9 +63,11 @@ class EmprestimoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Livro $livro)
     {
-        //
+       
+      return view('app.admin.emprestimo.show', ['livro' => $livro]);
+
     }
 
     /**
@@ -80,8 +99,13 @@ class EmprestimoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+
+        Emprestimo::where('livro_id', $request->input('livro_id'))->delete();
+
+        Livro::where('id',  $request->input('livro_id'))->update(['status'=>'Disponível']);
+
+        return redirect()->route('livro.index');
     }
 }

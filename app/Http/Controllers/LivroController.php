@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Livro;
+use \App\Models\Leitor;
+use \App\Models\Emprestimo;
+
 
 class LivroController extends Controller
 {
@@ -64,9 +67,12 @@ class LivroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Livro $livro)
     {
-        
+
+        $leitores = Leitor::all();
+
+        return view('app.admin.livro.show', ['livro' => $livro, 'leitores'=>$leitores]);
 
     }
 
@@ -81,6 +87,7 @@ class LivroController extends Controller
         return view('app.admin.livro.buscaLivro', ['livros'=> $livros , 'request'=>$request->all()]);
 
     }
+
 
     /**
      * Show the form for editing the specified resource.

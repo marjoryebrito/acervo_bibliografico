@@ -49,7 +49,7 @@
         <td>{{$livro->editora}}</td>
         <td>{{$livro->edicao}}</td>
         <td>{{$livro->status}}</td>
-        <td><a href="{{ route('emprestimo.create', ['livro'=>$livro->id])}}"><img src="https://img.icons8.com/ios/20/000000/open-book.png"/></a></td>
+        <td><a href="{{ route('livro.show', $livro->id)}}"><img src="https://img.icons8.com/ios/20/000000/open-book.png"/></a></td>
         <td><a href="{{ route('livro.edit', ['livro'=>$livro->id])}}"><img src="https://img.icons8.com/ios/20/000000/pencil-tip.png"/></a></td>
     </tr>
     @endforeach
