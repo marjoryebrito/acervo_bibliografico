@@ -12,7 +12,7 @@
 <form action=" {{ route('emprestimo.store')}}" method="post">
     @csrf
     <input type="hidden" name="livro_id" value="{{$livro->id}}">
-    <table>
+    <table class="tabela_acervo">
         <tr>
             <td>ID:</td>
             <td>{{$livro->id}}</td>
@@ -38,10 +38,12 @@
             <td>{{$livro->status}}</td>
         </tr>
     </table>
-
-    Emprestar para: 
+    <br><br>
     
-        
+    <span style="font-family: Arial, Helvetica, sans-serif;" >Emprestar para:</span>  
+    
+    {{$errors->has('leitor_id') ? $errors->first('leitor_id') : ''}}
+    
         <select name="leitor_id">
         <option value="">--Selecione--</option>
 
@@ -50,8 +52,11 @@
         @endforeach
     
     </select>
+	<div class="div-erros">{{$errors->has('leitor_id') ? $errors->first('leitor_id') : ''}}</div>
 
-    <Button type="submit">Emprestar</Button>
+
+
+    <Button class= "button_exluir" type="submit">Emprestar</Button>
 </form>
 @else
 <div>
@@ -59,8 +64,8 @@
         @csrf
         @method('DELETE')
     <input type="hidden" name="livro_id" value="{{$livro->id}}">
-    <p>Livro indisponível. Deseja registrar a devolução?</p>
-    <button type="submit">Devolver</button>
+    <h3>Livro indisponível. Deseja registrar a devolução?</h3>
+    <button class="button_exluir" type="submit">Devolver</button>
     </form>
 </div>
    

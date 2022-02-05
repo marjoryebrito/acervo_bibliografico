@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use \App\Models\Livro;
 use \App\Models\Leitor;
 use \App\Models\Emprestimo;
+use Illuminate\Support\Facades\DB;
 
 
 class LivroController extends Controller
@@ -17,10 +18,9 @@ class LivroController extends Controller
      */
     public function index(Request $request)
     {
-
-        $livros = Livro::paginate(5);
+       $livros =  DB::table('livros')->orderBy('titulo', 'asc')->paginate(10);
        
-       return view('app.admin.livro.index', ['livros'=> $livros]);
+       return view('app.admin.livro.index', ['livros'=> $livros, 'request'=>$request->all()]);
     }
 
     /**
@@ -56,8 +56,10 @@ class LivroController extends Controller
 
         $request->validate($regras, $feedback);
 
-        Livro::create($request->all());
+         Livro::create($request->all());
 
+       
+        
         return redirect()->route('livro.index');
     }
 
@@ -79,10 +81,9 @@ class LivroController extends Controller
     public function buscaLivro(Request $request)
     {
 
-        //@dd($request);
 
        $livros = Livro::where('titulo', 'like', '%'.$request->input('busca_titulo').'%')
-        ->where('status', 'like', '%'.$request->input('busca_status').'%')->paginate();
+        ->where('status', 'like', '%'.$request->input('busca_status').'%')->paginate(10);
 
         return view('app.admin.livro.buscaLivro', ['livros'=> $livros , 'request'=>$request->all()]);
 

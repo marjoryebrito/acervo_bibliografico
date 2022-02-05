@@ -16,16 +16,18 @@ body{
       cursor: pointer;
     }
 
+
     .button_exluir{
-        background-color: #241212;
+        background-color: rgb(39, 7, 7);
         border: none;
         color: white;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
         font-size: 16px;
-        margin-top: 20px;
         cursor: pointer;
+        width: 150px;
+        
+        padding: 10px;
     }
     
     .card-form{
@@ -70,6 +72,37 @@ body{
     text-align:left;
     }
 
+    .div_form_busca{
+        
+       margin-top: -65px;
+       width:100%;
+       float: left;
+       text-align:left;
+       }
+
+       .div_form input{
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
+    .div_form_busca input{
+        padding: 10px;
+        width: 50%;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
     .div-opcoes-edicao{
         float: right;
         margin-right: 70px;
@@ -99,16 +132,6 @@ body{
         display: table;
     }
     
-    
-    input{
-        width: 80%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
     
     .link_cadastro{
         padding: 80px;
@@ -171,7 +194,26 @@ body{
     font-family: Arial, Helvetica, sans-serif;
           
     }
+
+    .pagination ul{
+        list-style-type: none;
+    }
+
+    .pagination li{
+        display: inline;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
     
+    select{
+        background-color: #fff;
+        color: rgb(39, 7, 7);
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
     
     .sobre-nos{
         width: 70%;

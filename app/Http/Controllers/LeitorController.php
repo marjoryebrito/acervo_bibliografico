@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Leitor;
+use Illuminate\Support\Facades\DB;
 
 class LeitorController extends Controller
 {
@@ -12,12 +13,14 @@ class LeitorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $leitores = Leitor::paginate(5);
+        $leitores =  DB::table('leitors')->orderBy('nome', 'asc')->paginate(10);
+
+       // $leitores = Leitor::paginate(10);
        
-        return view('app.admin.leitor.index', ['leitores'=> $leitores]);
+        return view('app.admin.leitor.index', ['leitores' => $leitores, 'request' => $request->all()]);
         
     }
 

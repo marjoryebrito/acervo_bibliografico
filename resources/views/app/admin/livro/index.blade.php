@@ -8,23 +8,11 @@
 @endsection
 
 @section('form-pesquisa')
-<div>
-    <form action="{{ route('livro.buscaLivro')}}" method="post">
-        @csrf
-    <label>Busca por título</label><br>
-    <input type="text" name="busca_titulo"/>
 
-    <label>Busca por status</label><br>
-    <select name="busca_status">
-        <option value="">--Selecione--</option>
-        <option value="Disponível">Disponível</option>
-        <option value="Indisponível">Indisponível</option>
-    </select>
-    
-    <input type="submit" name="busca"/>
-</form>
-    <hr><br>
-</div>   
+@component('app.admin.livro._components.form_busca_livro')
+		
+@endcomponent
+
 @endsection
 
 
@@ -55,4 +43,6 @@
     @endforeach
 
     </table>
+    
+    {{$livros->appends($request)->links('pagination::bootstrap-4')}}
 @endsection    

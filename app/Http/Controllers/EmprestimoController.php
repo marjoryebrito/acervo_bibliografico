@@ -14,17 +14,17 @@ class EmprestimoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
 
         $emprestimos = DB::table('emprestimos')
         ->join('livros', 'livros.id', '=', 'emprestimos.livro_id')
         ->join('leitors', 'leitors.id', '=', 'emprestimos.leitor_id')
-        ->select('emprestimos.*', 'livros.titulo', 'leitors.nome')
-        ->get();
+        ->select('emprestimos.*', 'livros.titulo', 'leitors.nome')->orderBy('livros.titulo', 'asc')
+        ->paginate(1);
 
-        return view('app.admin.emprestimo.index', ['emprestimos'=> $emprestimos]);
+        return view('app.admin.emprestimo.index', ['emprestimos'=> $emprestimos, 'request' => $request->all()]);
     }
 
     /**
@@ -47,6 +47,11 @@ class EmprestimoController extends Controller
     public function store(Request $request)
     {
         
+        $regras = ['leitor_id' => 'required'];
+        $feedback = ['leitor_id.required' => 'É necessário selecionar um leitor.'];
+
+        $request->validate($regras, $feedback);
+
         Emprestimo::create($request->all());
 
         Livro::where('id', $request->input('livro_id'))->update(['status'=>'Indisponível']);
@@ -104,7 +109,7 @@ class EmprestimoController extends Controller
 
         Emprestimo::where('livro_id', $request->input('livro_id'))->delete();
 
-        Livro::where('id',  $request->input('livro_id'))->update(['status'=>'Disponível']);
+        Livro::where('id',  $request->input('livro_id'))->update(['status'=> 'Disponível']);
 
         return redirect()->route('livro.index');
     }

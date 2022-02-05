@@ -23,6 +23,7 @@
         <td>{{date('d/m/y', strtotime($emprestimo->created_at))}}</td>
     </tr>
     @endforeach
-
+   
     </table>
+    {{$emprestimos->appends($request)->links('pagination::bootstrap-4')}}
 @endsection    

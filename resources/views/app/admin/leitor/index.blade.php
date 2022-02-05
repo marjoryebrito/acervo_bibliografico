@@ -26,4 +26,7 @@
     </tr>
         @endforeach
     </table>
+
+    {{$leitores->appends($request)->links('pagination::bootstrap-4')}}
+
 @endsection
