@@ -31,5 +31,5 @@ Route::prefix('/admin')->group(function(){
 });
 
 Route::get('/', function () {
-    return view('livro.index');
+    return view('app.admin.livro.index');
 });
