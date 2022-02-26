@@ -31,6 +31,5 @@ Route::prefix('/admin')->group(function(){
 });
 
 Route::get('/', function () {
-    //return view('welcome');
-    return redirect()->route('livro.index');
+    return view('livro.index');
 });
