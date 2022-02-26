@@ -30,6 +30,4 @@ Route::prefix('/admin')->group(function(){
 
 });
 
-Route::get('/', function () {
-    return view('app.admin.livro.index');
-});
+Route::get('/', 'App\Http\Controllers\LivroController@index');
